@@ -53,7 +53,7 @@ class ProjectCardState extends State<ProjectCard> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset(
+                  Image.network(
                     widget.project.icons,
                     height: height * 0.05,
                   ),
@@ -89,7 +89,10 @@ class ProjectCardState extends State<ProjectCard> {
                 height: 36.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  image: DecorationImage(image: AssetImage(widget.project.banners), fit: BoxFit.cover),
+                  image: DecorationImage(
+                    image: NetworkImage(widget.project.banners),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),

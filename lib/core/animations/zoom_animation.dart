@@ -22,8 +22,8 @@ class _ZoomAnimationsState extends State<ZoomAnimations> with TickerProviderStat
 
     _controller = AnimationController(vsync: this, duration: const Duration(seconds: 4));
 
-    sizeAnimation = Tween(begin: 0.0, end: 0.2).animate(CurvedAnimation(
-        parent: _controller, curve: const Interval(0.40, 0.75, curve: Curves.easeOut)));
+    sizeAnimation = Tween(begin: 0.0, end: 0.2)
+        .animate(CurvedAnimation(parent: _controller, curve: const Interval(0.40, 0.75, curve: Curves.easeOut)));
     _controller.forward();
     _controller.addListener(() {
       setState(() {});
@@ -91,18 +91,16 @@ class _ZoomAnimationsState extends State<ZoomAnimations> with TickerProviderStat
               decoration: BoxDecoration(
                 // shape: BoxShape.circle,
                 borderRadius: BorderRadius.only(
-                  topLeft: Responsive.isMobile == true ? Radius.circular(12) : Radius.circular(5),
+                  topLeft: Responsive.isMobile == true ? const Radius.circular(12) : Radius.circular(5),
                   topRight: Responsive.isMobile == true ? Radius.circular(50) : Radius.circular(20),
-                  bottomLeft:
-                      Responsive.isMobile == true ? Radius.circular(50) : Radius.circular(20),
-                  bottomRight:
-                      Responsive.isMobile == true ? Radius.circular(12) : Radius.circular(5),
+                  bottomLeft: Responsive.isMobile == true ? Radius.circular(50) : Radius.circular(20),
+                  bottomRight: Responsive.isMobile == true ? Radius.circular(12) : Radius.circular(5),
                 ),
                 color: Colors.black.withOpacity(0.8),
                 image: const DecorationImage(
                   fit: BoxFit.cover,
                   alignment: Alignment.center,
-                  image: AssetImage('assets/imgs/colored_profile.jpg'),
+                  image: NetworkImage('assets/imgs/colored_profile.webp'),
                 ),
               ),
             ),

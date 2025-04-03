@@ -78,7 +78,7 @@ class MainPage extends StatelessWidget {
                 child: Container(
                   height: 100,
                   width: 200,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     // color: primaryColor.withOpacity(0.5),
                   ),
@@ -95,16 +95,14 @@ class MainPage extends StatelessWidget {
                   ),
                 ),
               ),
-              if (!state.isDarkThemeOn)
+              // if (state.isDarkThemeOn)
                 Align(
                   alignment: Alignment.center,
-                  child: Image.asset(
-                    // 'assets/imgs/background_image.jpg',
-                    // 'assets/imgs/background_new.jpg'
-                    !state.isDarkThemeOn
-                        ? 'assets/imgs/background_new.jpg'
-                        : 'assets/imgs/light_background.jpg',
-                    opacity: const AlwaysStoppedAnimation<double>(0.2),
+                  child: Image.network(
+                    'assets/imgs/background_new.webp',
+                    // 'assets/imgs/light_background.webp',
+                    // !state.isDarkThemeOn ? 'assets/imgs/background_new.webp' : 'assets/imgs/light_background.webp',
+                    opacity: AlwaysStoppedAnimation<double>(state.isDarkThemeOn ? 0.3 : 0.1),
                     width: width,
                     height: height,
                     fit: BoxFit.cover,

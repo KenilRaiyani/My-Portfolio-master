@@ -18,7 +18,7 @@ class NavBarLogo extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Text("< ", style: textSty),
-        Text("KєnιlNєxυѕ ", style: textSty),
+        Text("Kєnιl Nєxυѕ ", style: textSty),
         Text(
           Responsive.isDesktop(context) ? " />\t\t" : " />",
           style: textSty,
