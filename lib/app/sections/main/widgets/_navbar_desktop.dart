@@ -14,6 +14,7 @@ class _NavbarDesktopState extends State<_NavbarDesktop> {
     var theme = Theme.of(context);
     return BlocBuilder<ThemeCubit, ThemeState>(builder: (context, state) {
       return BlurryContainer(
+        borderRadius: BorderRadius.circular(0),
         padding: EdgeInsets.symmetric(horizontal: size.width / 8, vertical: 10),
         color: theme.navBarColor.withOpacity(0.70),
         child: Row(

@@ -5,21 +5,19 @@ class ServiceMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // double height = MediaQuery.of(context).size.height;
     return Column(
       children: [
-        // const CustomSectionHeading(text: '\nWhat I can do?'),
         const CustomSectionHeading(
           text1: '\nWhat I ',
           coloredText: 'can ',
           text2: 'do?',
         ),
-        Space.y(3.w)!,
+        Space.y(5.w)!,
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 10.w),
           child: CustomSectionSubHeading(text: servicesSubHeading),
         ),
-        Space.y(5.w)!,
+        Space.y(10.w)!,
         CarouselSlider.builder(
           itemCount: servicesUtils.length,
           itemBuilder: (BuildContext context, int itemIndex, int i) => Padding(
@@ -28,7 +26,9 @@ class ServiceMobile extends StatelessWidget {
           ),
           options: CarouselOptions(
             viewportFraction: 0.6,
-            height: 300,
+            height: Responsive.isMobile(context)
+                ? 391
+                : 300,
             autoPlay: true,
             autoPlayInterval: const Duration(seconds: 5),
             enlargeCenterPage: true,

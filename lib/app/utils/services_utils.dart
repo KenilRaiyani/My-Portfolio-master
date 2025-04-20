@@ -17,11 +17,35 @@ List<ServicesUtils> servicesUtils = [
     ],
   ),
   ServicesUtils(
+    name: 'Dart',
+    icon: 'assets/icons/dart-100.svg',
+    description: "I'm creating elegant designs suited to your needs following core design theory. ",
+    tool: [
+      'Dart is a programming language developed by Google, known for its versatility and usage in building cross-platform mobile, web, and desktop applications with a strong focus on performance and productivity.',
+    ],
+  ),
+  ServicesUtils(
     name: 'Firebase',
     icon: 'assets/icons/firebase-icon.svg',
     description: "",
     tool: [
       'Firebase is a comprehensive platform for building web and mobile applications that offers features such as real-time database, authentication, hosting, and cloud functions.'
+    ],
+  ),
+  ServicesUtils(
+    name: 'State Management',
+    icon: 'assets/icons/state_managment.svg',
+    description: "",
+    tool: [
+      'State management is the technique used to manage and share data across multiple parts of a Flutter app efficiently. It ensures UI updates automatically when the data changes. Example: Provider, Riverpod, BLoC.',
+    ],
+  ),
+  ServicesUtils(
+    name: 'Api Integration',
+    icon: 'assets/icons/api.svg',
+    description: "",
+    tool: [
+      'API stands for Application Programming Interface and it serves as a set of rules and protocols that allows different software applications to communicate and interact with each other, enabling the exchange of data and functionality.',
     ],
   ),
   ServicesUtils(
@@ -33,7 +57,7 @@ List<ServicesUtils> servicesUtils = [
     ],
   ),
   ServicesUtils(
-    name: 'Zego cloud',
+    name: 'Zego Cloud',
     icon: 'assets/icons/color_cropped-removebg.svg',
     description: "",
     tool: [
@@ -41,19 +65,11 @@ List<ServicesUtils> servicesUtils = [
     ],
   ),
   ServicesUtils(
-    name: 'Dart',
-    icon: 'assets/icons/dart-100.svg',
-    description: "I'm creating elegant designs suited to your needs following core design theory. ",
-    tool: [
-      'Dart is a programming language developed by Google, known for its versatility and usage in building cross-platform mobile, web, and desktop applications with a strong focus on performance and productivity.',
-    ],
-  ),
-  ServicesUtils(
-    name: 'Api integration',
-    icon: 'assets/icons/api.svg',
+    name: 'Git',
+    icon: 'assets/icons/git.svg',
     description: "",
     tool: [
-      'API stands for Application Programming Interface and it serves as a set of rules and protocols that allows different software applications to communicate and interact with each other, enabling the exchange of data and functionality.',
+      'Git is a version control system for tracking code changes, while GitHub is a platform for hosting and sharing that code. They help in collaboration, history tracking, and open-source contributions. Example: Commit code changes, collaborate on projects.'
     ],
   ),
   ServicesUtils(
@@ -62,14 +78,6 @@ List<ServicesUtils> servicesUtils = [
     description: "",
     tool: [
       'AdMob is a mobile advertising platform developed by Google that allows app developers to monetize their apps by displaying targeted ads to users.',
-    ],
-  ),
-  ServicesUtils(
-    name: 'Razorpay',
-    icon: 'assets/icons/razorpay.svg',
-    description: "",
-    tool: [
-      'Razorpay is a leading Indian fintech company that provides online payment solutions, including payment gateways, digital wallets, and other financial services, enabling businesses to accept and manage payments seamlessly.',
     ],
   ),
 ];

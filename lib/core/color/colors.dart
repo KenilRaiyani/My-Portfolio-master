@@ -58,7 +58,7 @@ const contactGradi = LinearGradient(
 );
 
 BoxShadow primaryColorShadow = BoxShadow(
-  color: primaryColor.withAlpha(100),
+  color: Colors.grey.withAlpha(100),
   blurRadius: 12.0,
   offset: const Offset(0.0, 0.0),
 );

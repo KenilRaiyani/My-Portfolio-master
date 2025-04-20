@@ -29,9 +29,9 @@ class _ServiceCardState extends State<_ServiceCard> {
       },
       child: Container(
         width: Responsive.isTablet(context) ? 400 : 300,
-        padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
+        padding: const EdgeInsets.all(20.0),
         decoration: BoxDecoration(
-          gradient: isHover ? pinkpurple : theme.serviceCard,
+          gradient: isHover ? pinkpurple.withOpacity(0.9) : theme.serviceCard,
           borderRadius: BorderRadius.circular(15),
           boxShadow: isHover ? [primaryColorShadow] : [blackColorShadow],
         ),
@@ -42,39 +42,31 @@ class _ServiceCardState extends State<_ServiceCard> {
               widget.service.icon,
               height: 60,
             ),
-            Space.y(3.w)!,
+            Space.y(2.w)!,
             Text(widget.service.name,
                 textAlign: TextAlign.center,
                 style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 14.7,
                   color: isHover ? whiteColor : theme.textColor,
                 )),
-            /*Space.y(1.w)!,
-            Text(
-              widget.service.description,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: isHover ? whiteColor.withOpacity(0.8) : theme.textColor,
-                fontWeight: FontWeight.w200,
-                fontSize: 13,
-              ),
-            ),*/
-            Space.y(2.w)!,
+            Space.y(1.5.h)!,
             if (Responsive.isDesktop(context))
               Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: widget.service.tool
                       .map((e) => Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               const Text('🛠   '),
-                              SizedBox(
-                                width: 230,
-                                child: Text(e,
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: isHover ? whiteColor : theme.textColor,
-                                    )),
+                              Expanded(
+                                child: ExpandableText(
+                                  text: e,
+                                  maxLines: 3,
+                                  style: TextStyle(
+                                    color: isHover ? whiteColor : theme.textColor,
+                                  ),
+                                ),
                               ),
                             ],
                           ))
@@ -91,11 +83,7 @@ class _ServiceCardState extends State<_ServiceCard> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 const Text('🛠   '),
-                                SizedBox(
-                                  height: 200,
-                                  width: Responsive.isTablet(context)
-                                      ? 290
-                                      : MediaQuery.of(context).size.width / 2.4,
+                                Expanded(
                                   child: Text(e,
                                       style: TextStyle(
                                         color: isHover ? whiteColor : theme.textColor,
@@ -108,6 +96,62 @@ class _ServiceCardState extends State<_ServiceCard> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class ExpandableText extends StatefulWidget {
+  final String text;
+  final int maxLines;
+  final TextStyle? style;
+
+  const ExpandableText({
+    required this.text,
+    this.maxLines = 3,
+    this.style,
+    super.key,
+  });
+
+  @override
+  State<ExpandableText> createState() => _ExpandableTextState();
+}
+
+class _ExpandableTextState extends State<ExpandableText> {
+  bool _showFullText = false;
+  bool _isOverflowing = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final span = TextSpan(text: widget.text, style: widget.style);
+    final tp = TextPainter(
+      text: span,
+      maxLines: widget.maxLines,
+      textDirection: TextDirection.ltr,
+    )..layout(maxWidth: 230); // match your SizedBox width
+
+    _isOverflowing = tp.didExceedMaxLines;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          widget.text,
+          maxLines: _showFullText ? null : widget.maxLines,
+          overflow: _showFullText ? TextOverflow.visible : TextOverflow.ellipsis,
+          style: widget.style,
+        ),
+        if (_isOverflowing && !_showFullText)
+          GestureDetector(
+            onTap: () => setState(() => _showFullText = true),
+            child: Text(
+              'more',
+              style: widget.style?.copyWith(
+                color: Colors.blue,
+                decoration: TextDecoration.underline,
+              ),
+            ),
+          ),
+      ],
     );
   }
 }

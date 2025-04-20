@@ -21,7 +21,6 @@ import 'package:mysite/core/theme/cubit/theme_cubit.dart';
 import 'package:provider/provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:flutter/material.dart';
-import 'package:mysite/core/util/constants.dart';
 import 'package:sizer/sizer.dart';
 part 'widgets/_navbar_desktop.dart';
 part 'widgets/_mobile_drawer.dart';
@@ -118,3 +117,5 @@ class MainPage extends StatelessWidget {
     );
   }
 }
+
+

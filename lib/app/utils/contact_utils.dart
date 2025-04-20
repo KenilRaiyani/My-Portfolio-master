@@ -20,9 +20,9 @@ List<ContactUtils> contactUtils = [
   // ContactUtils(
   //     url: twitter,
   //     icon: "https://img.icons8.com/fluency/48/000000/twitter.png"),
-  ContactUtils(
-      url: whatsapp, icon: "https://img.icons8.com/material-outlined/48/000000/whatsapp.png"),
+  ContactUtils(url: whatsapp, icon: "https://img.icons8.com/material-outlined/48/000000/whatsapp.png"),
   ContactUtils(url: linkedin, icon: "https://img.icons8.com/ios-filled/50/000000/linkedin.png"),
+  ContactUtils(url: '', icon: "https://img.icons8.com/material-rounded/52/mail.png"),
   // ContactUtils(
   //     url: youtube,
   //     icon: "https://img.icons8.com/ios-filled/50/000000/youtube-play.png"),
@@ -31,4 +31,3 @@ List<ContactUtils> contactUtils = [
   //     url: instagram, icon: "https://img.icons8.com/glyph-neue/64/000000/instagram-new.png"),
 ];
 
-//

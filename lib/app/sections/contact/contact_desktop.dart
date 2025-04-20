@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mysite/app/utils/contact_utils.dart';
@@ -25,7 +27,7 @@ class ContactDesktop extends StatelessWidget {
       child: Column(
         children: [
           const CustomSectionHeading(
-            text1: '\nGet ',
+            text1: '\n\nGet ',
             coloredText: 'Touch ',
             text2: 'in',
           ),
@@ -110,9 +112,17 @@ class ContactDesktop extends StatelessWidget {
                                 e.value.icon,
                                 color: theme.textColor,
                               ),
-                              onPressed: () => openURL(e.value.url),
+                              onPressed: () {
+                                if (e.value.icon == "https://img.icons8.com/material-rounded/52/mail.png") {
+                                  log("openn mail}");
+                                  launchMailClient();
+                                } else {
+                                  log("openn whatsapp or linkdin}");
+                                  openURL(e.value.url);
+                                }
+                              },
                               highlightColor: Colors.white54,
-                              iconSize: 21,
+                              iconSize: 18,
                             ))
                         .toList()),
               ],
