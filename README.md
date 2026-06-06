@@ -6,14 +6,20 @@ A personal portfolio app built with Flutter — runs on Android, iOS, Web, Windo
 
 ## Live Demo
 
-> _Add your Firebase Hosting URL here once deployed, e.g.:_
-> **[kenilraiyani.web.app](https://kenilraiyani.web.app)**
+https://kenilportfolio.web.app/
 
 ---
 
 ## Screenshots
 
-> _Add screenshots here: `![Portfolio](screenshots/portfolio.png)`_
+<img width="1895" height="911" alt="image" src="https://github.com/user-attachments/assets/644e95fd-c308-49fb-8d56-f98e8dba7a48" />
+<img width="1897" height="907" alt="image" src="https://github.com/user-attachments/assets/4a22ca93-e803-4ef2-b8b9-e02901a11399" />
+<img width="1896" height="906" alt="image" src="https://github.com/user-attachments/assets/0320b47b-118a-4884-91c2-51f341edd909" />
+<img width="1900" height="905" alt="image" src="https://github.com/user-attachments/assets/a6bd68c6-637c-4ea0-8d1a-6e80c97fc0c3" />
+
+
+
+
 
 ---
 
